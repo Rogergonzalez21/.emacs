@@ -139,13 +139,6 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-;; Indent
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-(setq js-indent-level 2)
-(setq js-highlight-level 3)
-
 ;; Delete selection mode
 (delete-selection-mode 1)
 
@@ -159,3 +152,6 @@
 (global-set-key [f7] 'magit-status)
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+
+;; Desktop save Mode
+(desktop-save-mode 1)
