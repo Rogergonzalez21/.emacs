@@ -133,7 +133,6 @@
         ))
 (setq org-todo-keywords
       '((sequence "TODO" "WAITING" "SOMEDAY" "CANCELED" "NEXT DAY" "DONE")))
-(find-file "~/Dropbox/emacs/todo.org")
 
 ;; Org-clock
 (setq org-clock-persist 'history)
