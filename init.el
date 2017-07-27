@@ -52,7 +52,7 @@
 (delete-selection-mode 1)
 
 ;; Parentesis highlight
-(show-paren-mode 1) 
+(show-paren-mode 1)
 
 ;; NO scrollbar, NO toolbar NO menubar
 (scroll-bar-mode -1)
