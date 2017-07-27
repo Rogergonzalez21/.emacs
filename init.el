@@ -48,6 +48,9 @@
 ;; WhiteSpace Cleanup
 (global-whitespace-cleanup-mode)
 
+;; Auto revert mode (Updating buffers when changed on disk)
+(global-auto-revert-mode)
+
 ;; Selection highlight
 (delete-selection-mode 1)
 
