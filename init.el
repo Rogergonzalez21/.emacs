@@ -12,7 +12,17 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
-(custom-set-faces)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(mode-line ((t (:foreground "#030303" :background "#6d0204" :box nil))))
+ '(mode-line-buffer-id ((t (:foreground "#000000" :bold t))))
+ '(mode-line-inactive ((t (:foreground "#ffffff" :background "#5d6365" :box nil))))
+ '(powerline-active1 ((t (:foreground "#f9f9f9" :background "#ff6365" :box nil))))
+ '(powerline-active2 ((t (:foreground "#f9f9f9" :background "#5d6365" :box nil))))
+ '(powerline-arrow-shape (quote arrow)))
 
 ;; Theme
 (load-theme 'badwolf t)
@@ -52,7 +62,7 @@
 
 ;; Basic: Maximize Buffer
 (when (fboundp 'winner-mode)
-(winner-mode 1))
+  (winner-mode 1))
 
 ;; F5 = Goto
 (global-set-key [f5] 'goto-line)
@@ -61,6 +71,7 @@
 (mouse-avoidance-mode "animate")
 
 ;; Web Mode: Begin
+;; JSX configs: http://cha1tanya.com/2015/06/20/configuring-web-mode-with-jsx.html
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -72,6 +83,28 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.es6\\'" . web-mode))
+
+
+;; use web-mode for .jsx files
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.js[x]?\\'")
+        ("javascript" . "\\.es6?\\'")))
+
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
+
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "js")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
 
 ;; WebMode: Style-Gook
 (defun my-web-mode-hook ()
@@ -112,14 +145,7 @@
 ;; Powerline
 (require 'powerline)
 (powerline-default-theme)
-(custom-set-faces
- '(powerline-arrow-shape 'arrow)
- '(mode-line ((t (:foreground "#030303" :background "#6d0204" :box nil))))
- '(mode-line-inactive ((t (:foreground "#ffffff" :background "#5d6365" :box nil))))
- '(powerline-active1 ((t (:foreground "#f9f9f9" :background "#ff6365" :box nil))))
- '(powerline-active2 ((t (:foreground "#f9f9f9" :background "#5d6365" :box nil))))
- '(mode-line-buffer-id ((t (:foreground "#000000" :bold t))))
-)
+
 
 ;; Org-Mode
 ;; Auto Org-Mode
@@ -155,3 +181,62 @@
 
 ;; Desktop save Mode
 (desktop-save-mode 1)
+
+;; FlyCheck configs
+;; More help: http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html#configuring_emacs
+;; http://www.flycheck.org/manual/latest/index.html
+;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
+(require 'flycheck)
+
+;; turn on flychecking globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+          '(javascript-jshint)))
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+          '(json-jsonlist)))
+
+;; use local eslint from node_modules before global
+;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+;; https://github.com/purcell/exec-path-from-shell
+;; only need exec-path-from-shell on OSX
+;; this hopefully sets up path and other vars better
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
+;; YASnippets
+(add-to-list 'load-path
+              "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))
