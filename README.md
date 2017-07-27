@@ -11,6 +11,7 @@ My .emacs file
 * [WhiteSpace Cleanup](https://github.com/purcell/whitespace-cleanup-mode)
 * [Magit Gitflow](https://github.com/jtatarik/magit-gitflow)
 * [Autocomplete](https://github.com/auto-complete/auto-complete)
+* [FlyCheck](https://github.com/auto-complete/auto-complete)
 * Some basic configurations
 
 ## My Theme:
