@@ -67,8 +67,11 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
-;; F5 = Goto
+;; F5 = Goto line
 (global-set-key [f5] 'goto-line)
+
+;; F6 = browse-url-of-file
+(global-set-key [f6] 'browse-url-of-file)
 
 ;; Removes mouse from code
 (mouse-avoidance-mode "animate")
