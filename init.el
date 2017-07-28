@@ -76,6 +76,9 @@
 ;; Removes mouse from code
 (mouse-avoidance-mode "animate")
 
+;; Associates json-mode to all .eslintrc files
+(add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . json-mode))
+
 ;; Web Mode: Begin
 ;; JSX configs: http://cha1tanya.com/2015/06/20/configuring-web-mode-with-jsx.html
 (require 'web-mode)
