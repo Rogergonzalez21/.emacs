@@ -12,7 +12,8 @@ My .emacs file
 * [Magit Gitflow](https://github.com/jtatarik/magit-gitflow)
 * [Autocomplete](https://github.com/auto-complete/auto-complete)
 * [FlyCheck](https://github.com/auto-complete/auto-complete)
-* [YaSnippets](https://github.com/joaotavora/yasnippet)
+* [YASnippets](https://github.com/joaotavora/yasnippet)
+* [Helm](https://github.com/emacs-helm/helm)
 * Some basic configurations
 
 ## My Theme:
