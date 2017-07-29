@@ -244,7 +244,8 @@
 ;; Helm configs
 (require 'helm-config)
 
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(with-eval-after-load "helm"
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action))
 
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
