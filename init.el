@@ -1,6 +1,6 @@
 ;; Basic: User
 (setq user-full-name "Roger González")
-(setq user-mail-address "rogergonzalez21@gmai.com")
+(setq user-mail-address "roger@rogs.me")
 
 ;; Basic: Packages
 (require 'package)
