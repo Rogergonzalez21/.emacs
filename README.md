@@ -14,6 +14,7 @@ My .emacs file
 * [FlyCheck](https://github.com/auto-complete/auto-complete)
 * [YASnippets](https://github.com/joaotavora/yasnippet)
 * [Helm](https://github.com/emacs-helm/helm)
+* [PugMode](https://github.com/hlissner/emacs-pug-mode)
 * Some basic configurations
 
 ## My Theme:
