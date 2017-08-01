@@ -257,6 +257,11 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
+;; Helm flycheck
+(require 'helm-flycheck)
+(eval-after-load 'flycheck
+  '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
+
 ;; HTTP Statuses for Helm
 (defvar helm-httpstatus-source
   '((name . "HTTP STATUS")
@@ -308,4 +313,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (pug-mode helm-swoop helm react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))
+    (helm-flycheck pug-mode helm-swoop helm react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))

@@ -11,9 +11,10 @@ My .emacs file
 * [WhiteSpace Cleanup](https://github.com/purcell/whitespace-cleanup-mode)
 * [Magit Gitflow](https://github.com/jtatarik/magit-gitflow)
 * [Autocomplete](https://github.com/auto-complete/auto-complete)
-* [FlyCheck](https://github.com/auto-complete/auto-complete)
+* [FlyCheck](http://www.flycheck.org/en/latest/)
 * [YASnippets](https://github.com/joaotavora/yasnippet)
 * [Helm](https://github.com/emacs-helm/helm)
+* [Helm FlyCheck](https://github.com/yasuyk/helm-flycheck)
 * [PugMode](https://github.com/hlissner/emacs-pug-mode)
 * Some basic configurations
 
