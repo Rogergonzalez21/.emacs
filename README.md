@@ -16,6 +16,7 @@ My .emacs file
 * [Helm](https://github.com/emacs-helm/helm)
 * [Helm FlyCheck](https://github.com/yasuyk/helm-flycheck)
 * [PugMode](https://github.com/hlissner/emacs-pug-mode)
+* [Emojify](https://github.com/iqbalansari/emacs-emojify)
 * Some basic configurations
 
 ## My Theme:
