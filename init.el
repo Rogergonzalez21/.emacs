@@ -67,6 +67,11 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
+;; Electric pair mode
+(electric-pair-mode 1)
+(push '(?\' . ?\') electric-pair-pairs)
+(push '(?\` . ?\`) electric-pair-pairs)
+
 ;; F5 = Goto line
 (global-set-key [f5] 'goto-line)
 
