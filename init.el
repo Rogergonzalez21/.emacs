@@ -139,6 +139,7 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq js-indent-level 2)
+(setq-default tab-width 2)
 (setq js-highlight-level 3)
 
 (add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
