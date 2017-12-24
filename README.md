@@ -17,6 +17,7 @@ My .emacs file
 * [Helm FlyCheck](https://github.com/yasuyk/helm-flycheck)
 * [PugMode](https://github.com/hlissner/emacs-pug-mode)
 * [Emojify](https://github.com/iqbalansari/emacs-emojify)
+* [Restclient](https://github.com/pashky/restclient.el)
 * Some basic configurations
 
 ## My Theme:
