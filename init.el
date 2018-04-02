@@ -43,7 +43,6 @@
 
 ;; Column number
 (column-number-mode 1)
-(ac-config-default)
 
 ;; WhiteSpace Cleanup
 (global-whitespace-cleanup-mode)
@@ -163,25 +162,6 @@
 ;; Powerline
 (require 'powerline)
 (powerline-default-theme)
-
-
-;; Org-Mode
-;; Auto Org-Mode
-
-(setq org-todo-keyword-faces
-      '(
-        ("SOMEDAY" . (:foreground "blue"))
-        ("CANCELED" . (:foreground "yellow"))
-        ("WAITING" . (:foreground "purple"))
-        ("NEXT DAY" . (:foreground "white"))
-        ("DONE" . (:foreground "green"))
-        ))
-(setq org-todo-keywords
-      '((sequence "TODO" "WAITING" "SOMEDAY" "CANCELED" "NEXT DAY" "DONE")))
-
-;; Org-clock
-(setq org-clock-persist 'history)
-(org-clock-persistence-insinuate)
 
 ;; Delete selection mode
 (delete-selection-mode 1)
