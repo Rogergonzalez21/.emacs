@@ -134,6 +134,14 @@
 (define-key js2-mode-map (kbd "C-c m p") 'mocha-test-project)
 (setq mocha-options "--timeout 15000 --exit")
 
+;; Run npm test
+(defun npm-test ()
+  "Test the current project"
+  (interactive)
+  (async-shell-command "npm test"))
+
+(define-key js2-mode-map (kbd "C-c t") 'npm-test)
+
 ;; use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
