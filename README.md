@@ -18,6 +18,7 @@ My .emacs file
 * [PugMode](https://github.com/hlissner/emacs-pug-mode)
 * [Emojify](https://github.com/iqbalansari/emacs-emojify)
 * [Restclient](https://github.com/pashky/restclient.el)
+* [JS2 Mode](https://github.com/mooz/js2-mode)
 * Some basic configurations
 
 ## My Theme:
