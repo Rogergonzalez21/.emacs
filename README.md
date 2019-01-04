@@ -19,6 +19,8 @@ My .emacs file
 * [Emojify](https://github.com/iqbalansari/emacs-emojify)
 * [Restclient](https://github.com/pashky/restclient.el)
 * [JS2 Mode](https://github.com/mooz/js2-mode)
+* [Projectile](https://github.com/bbatsov/projectile)
+* [LSP Mode](https://github.com/emacs-lsp/lsp-mode)
 * Some basic configurations
 
 ## My Theme:
