@@ -123,6 +123,7 @@
 ;; lsp mode
 (require 'lsp-mode)
 (add-hook 'js2-mode-hook #'lsp)
+(add-hook 'python-mode-hook #'lsp)
 
 ;; Projectile mode
 (projectile-mode +1)
