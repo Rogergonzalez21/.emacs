@@ -130,6 +130,13 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+;; Indium
+(unless (package-installed-p 'indium)
+  (package-install 'indium))
+(require 'indium)
+(add-hook 'js2-mode-hook #'indium-interaction-mode)
+(define-key js2-mode-map (kbd "C-c i") 'indium-launch)
+
 ;; Run npm test
 (defun npm-test ()
   "Test the current project"
@@ -352,4 +359,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-lsp lsp-ui lsp-mode yaml-mode mocha company-tern xref-js2 js2-refactor ac-js2 skewer-mode js2-mode coverage restclient emojify helm-flycheck pug-mode helm-swoop helm react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))
+    (indium company-lsp lsp-ui lsp-mode yaml-mode mocha company-tern xref-js2 js2-refactor ac-js2 skewer-mode js2-mode coverage restclient emojify helm-flycheck pug-mode helm-swoop helm react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))

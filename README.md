@@ -21,6 +21,7 @@ My .emacs file
 * [JS2 Mode](https://github.com/mooz/js2-mode)
 * [Projectile](https://github.com/bbatsov/projectile)
 * [LSP Mode](https://github.com/emacs-lsp/lsp-mode)
+* [Indium](https://github.com/NicolasPetton/Indium)
 * Some basic configurations
 
 ## My Theme:
