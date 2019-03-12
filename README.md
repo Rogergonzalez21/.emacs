@@ -20,8 +20,12 @@ My .emacs file
 * [Restclient](https://github.com/pashky/restclient.el)
 * [JS2 Mode](https://github.com/mooz/js2-mode)
 * [Projectile](https://github.com/bbatsov/projectile)
-* [LSP Mode](https://github.com/emacs-lsp/lsp-mode)
+* [Tern Mode](http://ternjs.net/doc/manual.html#emacs)
 * [Indium](https://github.com/NicolasPetton/Indium)
+* [RJSX Mode](https://github.com/felipeochoa/rjsx-mode)
+* [Multiple cursors mode](https://github.com/magnars/multiple-cursors.el)
+* [Prettier JS](https://github.com/prettier/prettier-emacs)
+* [Dockerfile mode](https://github.com/spotify/dockerfile-mode)
 * Some basic configurations
 
 ## My Theme:

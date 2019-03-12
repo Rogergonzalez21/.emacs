@@ -103,9 +103,14 @@
 (require 'xref-js2)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+(add-hook 'js2-mode-hook #'emmet-mode)
+(setq emmet-expand-jsx-className? t)
 (js2r-add-keybindings-with-prefix "C-c C-f")
 (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
+(define-key js2-mode-map (kbd "C-c ;") #'comment-line)
+(define-key js2-mode-map (kbd "C-c C-;") #'comment-or-uncomment-region)
 
 ;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so
 ;; unbind it.
@@ -120,10 +125,26 @@
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
 
-;; lsp mode
-(require 'lsp-mode)
-(add-hook 'js2-mode-hook #'lsp)
-(add-hook 'python-mode-hook #'lsp)
+;; Multiple cursors mode
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(define-key mc/keymap (kbd "<return>") nil)
+
+;; Tern
+(require 'company)
+(require 'company-tern)
+
+(add-to-list 'company-backends 'company-tern)
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
+
+;; Disable completion keybindings, as we use xref-js2 instead
+(define-key tern-mode-keymap (kbd "M-.") nil)
+(define-key tern-mode-keymap (kbd "M-,") nil)
 
 ;; Projectile mode
 (projectile-mode +1)
@@ -137,13 +158,17 @@
 (add-hook 'js2-mode-hook #'indium-interaction-mode)
 (define-key js2-mode-map (kbd "C-c i") 'indium-launch)
 
+;; PrettierJS
+(eval-after-load 'js2-mode
+  '(progn
+     (add-hook 'js2-mode-hook #'add-node-modules-path)
+     (add-hook 'js2-mode-hook #'prettier-js-mode)))
+
 ;; Run npm test
 (defun npm-test ()
   "Test the current project"
   (interactive)
   (async-shell-command "npm test"))
-
-(define-key js2-mode-map (kbd "C-c t") 'npm-test)
 
 ;; use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -359,4 +384,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (indium company-lsp lsp-ui lsp-mode yaml-mode mocha company-tern xref-js2 js2-refactor ac-js2 skewer-mode js2-mode coverage restclient emojify helm-flycheck pug-mode helm-swoop helm react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))
+    (dockerfile-mode prettier-js add-node-modules-path stylus-mode yasnippet-snippets indium company-lsp lsp-ui lsp-mode yaml-mode mocha company-tern xref-js2 js2-refactor ac-js2 skewer-mode js2-mode coverage restclient emojify helm-flycheck pug-mode helm-swoop helm react-snippets yasnippet whitespace-cleanup-mode web-mode web-beautify scss-mode sass-mode rjsx-mode rainbow-mode rainbow-delimiters projectile project-explorer powerline nyan-mode neotree markdown-mode magit-gitflow kooten-theme json-mode jedi indent-guide geeknote flycheck exec-path-from-shell emmet-mode bundler badwolf-theme aggressive-indent))))
