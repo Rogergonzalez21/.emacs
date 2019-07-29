@@ -7,8 +7,7 @@
 ;;; Code:
 
 ;; Theme
-(load-theme 'dark-laptop t t)
-(enable-theme 'dark-laptop)
+(load-theme 'reverse t)
 (set-frame-font "Source Code Pro Medium 11")
 
 ;; Line number

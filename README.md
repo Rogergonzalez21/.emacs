@@ -31,6 +31,6 @@ My .emacs file
 * Some basic configurations
 
 ## My Theme:
-* [Hemisu](https://github.com/andrzejsliwa/hemisu-theme)
+* [Reverse](https://github.com/syohex/emacs-reverse-theme)
 
 Feel free to check, use, copy and distribute this `init.el`. I'll try to update regularly
