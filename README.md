@@ -1,6 +1,10 @@
 # .emacs
 My .emacs file
 
+## How it looks
+![rogs-emacs-preview1](https://raw.githubusercontent.com/Rogergonzalez21/.emacs/master/demo1.png)
+![rogs-emacs-preview2](https://raw.githubusercontent.com/Rogergonzalez21/.emacs/master/demo2.png)
+
 ## It uses:
 * [Web Mode](http://web-mode.org/)
 * [Emmet](https://github.com/smihica/emmet-mode)
