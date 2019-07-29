@@ -7,17 +7,9 @@
 ;;; Code:
 
 ;; Theme
-(load-theme 'hemisu-dark t t)
+(load-theme 'dark-laptop t t)
+(enable-theme 'dark-laptop)
 (set-frame-font "Source Code Pro Medium 11")
-
-;;; Powerline mode colors
-(custom-set-faces
- '(mode-line ((t (:foreground "#030303" :background "#2B6D02" :box nil))))
- '(mode-line-buffer-id ((t (:foreground "#000000" :bold t))))
- '(mode-line-inactive ((t (:foreground "#ffffff" :background "#5d6365" :box nil))))
- '(powerline-active1 ((t (:foreground "#424242" :background "#75D85A" :box nil))))
- '(powerline-active2 ((t (:foreground "#f9f9f9" :background "#398618" :box nil))))
- '(powerline-arrow-shape (quote arrow)))
 
 ;; Line number
 (global-linum-mode 1)
