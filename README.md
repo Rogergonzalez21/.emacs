@@ -26,9 +26,11 @@ My .emacs file
 * [Multiple cursors mode](https://github.com/magnars/multiple-cursors.el)
 * [Prettier JS](https://github.com/prettier/prettier-emacs)
 * [Dockerfile mode](https://github.com/spotify/dockerfile-mode)
+* [Emacs Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)
+* [Elpy](https://github.com/jorgenschaefer/elpy/blob/master/README.rst)
 * Some basic configurations
 
 ## My Theme:
-* [Badwolf](https://github.com/bkruczyk/badwolf-emacs)
+* [Hemisu](https://github.com/andrzejsliwa/hemisu-theme)
 
 Feel free to check, use, copy and distribute this `init.el`. I'll try to update regularly
