@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("init.el"
+(("agenda.org"
+ (filename . "~/Documentos/Org/agenda.org")
+ (front-context-string . "* kek\n** TODO lo")
+ (rear-context-string)
+ (position . 1))
+("init.el"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . " 5)))\n;; Or if y")
  (rear-context-string . "    (registers .")

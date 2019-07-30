@@ -19,7 +19,6 @@
 (global-set-key [f7] 'magit-status)
 
 ;; Helm
-;; Helm configs
 (with-eval-after-load "helm"
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action))
 
@@ -44,6 +43,9 @@
 ;; Projectile mode
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; Org mode
+(global-set-key "\C-ca" 'org-agenda)
 
 (provide 'rogs-keybindings)
 ;;; rogs-keybindings.el ends here

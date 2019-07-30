@@ -36,6 +36,7 @@
 (require 'setup-flycheck-mode)
 (require 'setup-yaml-mode)
 (require 'setup-python-mode)
+(require 'setup-org-mode)
 
 (provide 'init.el)
 ;;; init.el ends here
