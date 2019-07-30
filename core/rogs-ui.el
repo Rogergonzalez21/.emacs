@@ -53,5 +53,8 @@
 ;; Wind move
 (windmove-default-keybindings 'meta)
 
+;; Start maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (provide 'rogs-ui)
 ;;; rogs-ui.el ends here
