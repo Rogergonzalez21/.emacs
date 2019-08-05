@@ -24,6 +24,9 @@
 ;; Use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
+;; Use web-mode for .hbs files
+(add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))
+
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")
         ("javascript" . "\\.es6?\\'")))
