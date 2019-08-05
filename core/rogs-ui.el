@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; Theme
-(load-theme 'reverse t)
+(load-theme 'bliss t)
 (set-frame-font "Source Code Pro Medium 11")
 
 ;; Line number

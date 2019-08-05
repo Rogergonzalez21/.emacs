@@ -35,6 +35,6 @@ My .emacs file
 * Some basic configurations
 
 ## My Theme:
-* [Reverse](https://github.com/syohex/emacs-reverse-theme)
+* [Bliss](https://github.com/emacsfodder/emacs-bliss-theme/blob/master/bliss-theme.el)
 
 Feel free to check, use, copy and distribute this `init.el`. I'll try to update regularly
