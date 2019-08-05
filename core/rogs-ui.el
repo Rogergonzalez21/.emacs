@@ -56,5 +56,8 @@
 ;; Start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; Overriding background color
+(set-background-color "black")
+
 (provide 'rogs-ui)
 ;;; rogs-ui.el ends here
