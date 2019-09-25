@@ -50,10 +50,9 @@
 (setq dashboard-items '((recents  . 5)
                         (bookmarks . 5)
                         (projects . 5)
-                        (agenda . 5)))
+                        (agenda . 20)))
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
-(setq show-week-agenda-p t)
 
 ;; YASnippets
 (add-to-list 'load-path

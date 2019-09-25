@@ -46,6 +46,7 @@
 
 ;; Org mode
 (global-set-key "\C-ca" 'org-agenda)
+(global-set-key (kbd "<f12>") 'org-capture)
 
 (provide 'rogs-keybindings)
 ;;; rogs-keybindings.el ends here
