@@ -38,7 +38,7 @@
 (setq org-display-custom-times t)
 
 ;; Tags
-(setq org-tag-alist '(("payments" . ?p) ("bills" . ?b) ("girlfriend" . ?g) ("call" . ?c) ("mail" . ?m) ("fiverr" . ?f) ("rogs" . ?r) ("jobs" . ?j)))
+(setq org-tag-alist '(("payments" . ?p) ("girlfriend" . ?g) ("call" . ?c) ("mail" . ?m) ("rogs" . ?r) ("jobs" . ?j) ("backend" . ?b) ("frontend" . ?f) ("devops" . ?d) ("bugs" . ?u) ("improvements" . ?i)))
 
 ;; Log into drawer
 (setq org-log-into-drawer t)
