@@ -106,5 +106,9 @@
 ;; Keep line breaks on export
 (setq org-export-preserve-breaks t)
 
+;; Org bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 (provide 'setup-org-mode)
 ;;; setup-org-mode.el ends here
